@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter - Social Post</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .post-container {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 20px;
+        }
+
+        .app-showcase {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 280px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-demo {
+            margin-bottom: 15px;
+        }
+
+        .input-demo input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .dropdown-demo {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            background: white;
+            text-align: center;
+        }
+
+        .convert-btn-demo {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .convert-btn-demo:hover {
+            transform: translateY(-2px);
+        }
+
+        .result-demo {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .post-title {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+        }
+
+        .post-subtitle {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .thermometer {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.3);
+            transform: rotate(15deg);
+        }
+
+        .snowflake {
+            position: absolute;
+            top: 80px;
+            left: 30px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.4);
+            transform: rotate(-20deg);
+        }
+
+        .fire {
+            position: absolute;
+            bottom: 80px;
+            right: 40px;
+            font-size: 35px;
+            color: rgba(255, 255, 255, 0.3);
+            transform: rotate(10deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .app-showcase {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <div class="decorative-elements">
+            <div class="thermometer">🌡️</div>
+            <div class="snowflake">❄️</div>
+            <div class="fire">🔥</div>
+        </div>
+        
+        <div class="post-title">Temperature Converter</div>
+        
+        <div class="app-showcase">
+            <div class="app-title">🌡️ Temp Converter</div>
+            
+            <div class="input-demo">
+                <input type="text" value="36" readonly>
+            </div>
+            
+            <select class="dropdown-demo">
+                <option>Celsius to Fahrenheit</option>
+            </select>
+            
+            <button class="convert-btn-demo">Convert</button>
+            
+            <div class="result-demo">
+                36°C = 96.80°F
+            </div>
+        </div>
+        
+        <div class="post-subtitle">
+            ✨ Built with HTML, CSS & JavaScript ✨
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive behavior to the demo
+        document.addEventListener('DOMContentLoaded', function() {
+            const convertBtn = document.querySelector('.convert-btn-demo');
+            const input = document.querySelector('.input-demo input');
+            const dropdown = document.querySelector('.dropdown-demo');
+            const result = document.querySelector('.result-demo');
+            
+            // Sample conversion values
+            const conversions = [
+                { input: '36', type: 'Celsius to Fahrenheit', result: '36°C = 96.80°F' },
+                { input: '100', type: 'Fahrenheit to Celsius', result: '100°F = 37.78°C' },
+                { input: '0', type: 'Celsius to Fahrenheit', result: '0°C = 32.00°F' },
+                { input: '32', type: 'Fahrenheit to Celsius', result: '32°F = 0.00°C' }
+            ];
+            
+            let currentIndex = 0;
+            
+            // Cycle through different conversion examples
+            function cycleConversions() {
+                const conversion = conversions[currentIndex];
+                
+                // Smooth transition effect
+                result.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    input.value = conversion.input;
+                    dropdown.innerHTML = `<option>${conversion.type}</option>`;
+                    result.textContent = conversion.result;
+                    result.style.opacity = '1';
+                    
+                    currentIndex = (currentIndex + 1) % conversions.length;
+                }, 200);
+            }
+            
+            // Auto-cycle every 3 seconds
+            setInterval(cycleConversions, 3000);
+            
+            // Click to cycle manually
+            convertBtn.addEventListener('click', cycleConversions);
+        });
+    </script>
+</body>
+</html>

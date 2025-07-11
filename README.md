@@ -31,8 +31,6 @@ $ git clone https://github.com/SYEDUMAR246/Temperature-Converter.git
 # Go into the project directory
 $ cd Temperature-Converter
 
-# Run the application
-$ python temperature_converter.py
 ```
 
 ---

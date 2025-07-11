@@ -17,8 +17,8 @@ A simple and elegant HTML application to convert temperatures between Celsius, F
 
 ## 🧰 Tech Stack
 
-**Language:** HTML, CSS, JavaScript
-**GUI Library:** Tkinter
+- **Language:** HTML, CSS, JavaScript
+- **GUI Library:** Tkinter
 
 ---
 

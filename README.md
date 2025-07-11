@@ -37,11 +37,6 @@ $ python temperature_converter.py
 
 ---
 
-## 📸 Demo
-
-![Demo](https://claude.ai/public/artifacts/e40d486d-7c22-41a4-9a06-38afa57f8274?fullscreen=true)
-
----
 
 ## 📜 License
 
